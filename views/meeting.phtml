@@ -1,0 +1,18 @@
+<html>
+<head>
+
+</head>
+<body>
+<h1>Liste des Meetings</h1>
+    <?php /* @var $Meetings \Meeting\Collection\MeetingCollection */ ?>
+    <ul>
+        <?php foreach ($Meetings as $meeting):?>
+            <li>
+                <a href="meeting/<?= urlencode($meeting->getId());?>">
+                    <?= $meeting->getTitle() ?>
+                </a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</body>
+</html>

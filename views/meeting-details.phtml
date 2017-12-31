@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Meeting</title>
+</head>
+<body>
+    <?php /* @var $meeting \Meeting\Entity\Meeting */ ?>
+    <h1>Organisateur.s du Meeting : </h1>
+    <ul>
+        <?php foreach ($meeting as $data) :?>
+            <li><?= $data->getName();  ?> <?= $data->getFirstname();?> </li>
+        <?php endforeach; ?>
+    </ul>
+    <h1>Participants du Meeting </h1>
+    <ul>
+        <?php foreach ($participant as $data) :?>
+            <li><?= $data->getName();  ?> <?= $data->getFirstname();?> </li>
+        <?php endforeach; ?>
+    </ul>
+</body>
+</html> 
