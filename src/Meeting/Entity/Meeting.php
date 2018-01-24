@@ -33,7 +33,7 @@ final class Meeting
     }
 	public function getTitle()
 	{
-		return $this->titre;
+		return $this->title;
 	}
 	public function getDescription()
 	{

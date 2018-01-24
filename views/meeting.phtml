@@ -6,7 +6,7 @@
 <h1>Liste des Meetings</h1>
     <?php /* @var $Meetings \Meeting\Collection\MeetingCollection */ ?>
     <ul>
-        <?php foreach ($Meetings as $meeting):?>
+        <?php foreach ($meetings as $meeting):?>
             <li>
                 <a href="meeting/<?= urlencode($meeting->getId());?>">
                     <?= $meeting->getTitle() ?>

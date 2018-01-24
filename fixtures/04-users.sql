@@ -9,14 +9,14 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `users` (`id`, `name`, `firstname`) VALUES
-(1,	`Conan`, `Mccarthy`),
-(2,	`Malachi`, `Austin`),
-(3,	`Vernon`, `Patterson`),
-(4,	`Kirk`, `Hess`),
-(5,	`Judah`, `Huber`),
-(6,	`Kelly`, `Tucker`),
-(7,	`Steel`, `Stafford`),
-(8,	`Driscoll`, `Leon`);
+(1,	'Conan', 'Mccarthy'),
+(2,	'Malachi', 'Austin'),
+(3,	'Vernon', 'Patterson'),
+(4,	'Kirk', 'Hess'),
+(5,	'Judah', 'Huber'),
+(6,	'Kelly', 'Tucker'),
+(7,	'Steel', 'Stafford'),
+(8,	'Driscoll', 'Leon');
 
 -- ORGANISERS
 
@@ -59,8 +59,7 @@ INSERT INTO `participants` (`id_meeting`, `id_user`) VALUES
 (3,	7),
 (4,	2),
 (4,	4),
-(6,	5),
-(6,	6),
+(5,	5),
 (5,	3),
 (5,	4),
 (5,	8);

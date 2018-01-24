@@ -32,14 +32,15 @@ final class MeetingRepository
 		$meetings = [];
         while( $meeting = $result->fetch() )
         {
-			$meetings[] = new Meeting((int)$meeting['id'],$meeting['titre'],$meeting['description'],$meeting['date_debut'],$meeting['date_fin']);
+			$meetings[] = new Meeting((int)$meeting['id'], (string)$meeting['title'],(string)$meeting['description'],(string)$meeting['date_debut'],(string)$meeting['date_fin']);
 		}
+            dump($meetings);
         return new MeetingCollection(...$meetings);
     }
 
     public function getOrganiser(string $name) : OrganiserCollection
     {
-        $statement = $this->pdo->prepare('SELECT u.id, u.name, u.firstname FROM user as u INNER JOIN organiser as o ON o.id_user = u.id WHERE o.id_meeting = :id_meeting');
+        $statement = $this->pdo->prepare('SELECT u.id, u.name, u.firstname FROM users as u INNER JOIN organisers as o ON o.id_user = u.id WHERE o.id_meeting = :id_meeting');
         $statement->execute([':id_meeting' => $name]);
         $organisers = $statement->fetchall();
         if (!$organisers)
@@ -56,7 +57,7 @@ final class MeetingRepository
 
     public function getParticipant(string $name) : ParticipantCollection
     {
-        $statement = $this->pdo->prepare('SELECT u.id, u.name, u.firstname FROM user as u INNER JOIN participant as p ON p.id_user = u.id WHERE p.id_meeting = :id_meeting');
+        $statement = $this->pdo->prepare('SELECT u.id, u.name, u.firstname FROM users as u INNER JOIN participants as p ON p.id_user = u.id WHERE p.id_meeting = :id_meeting');
         $statement->execute([':id_meeting' => $name]);
         $participants = $statement->fetchall();
         if (!$participants)
